@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'cpd_administration.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'proyecto',
+        'USER': 'pedro',
+        'PASSWORD': 'root',
+        'HOST': '192.168.1.108',
+        'PORT': '3306',
     }
 }
 
