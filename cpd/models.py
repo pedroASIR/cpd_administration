@@ -17,7 +17,7 @@ class sensor(models.Model):
     nombre = models.CharField('Nombre', max_length=10, null=False)
     tipo = models.CharField('Tipo', max_length=3, choices=TIPO_CHOICES, null=False)
     estado = models.BooleanField('Estado', null=False, default=True)
-    valor_max_tem = models.SmallIntegerField('Valor Máximo de Temperatura', null=False)
+    valor_max_tem = models.SmallIntegerField('Valor Máximo de Temperatura', null=True)
 
     class Meta:
         verbose_name = "Sensor"
