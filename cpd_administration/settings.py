@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cpd',
+    
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'cpd.templates'
+                'cpd.templates',
             ],
         },
     },
@@ -81,7 +82,7 @@ DATABASES = {
         'NAME': 'proyecto',
         'USER': 'pedro',
         'PASSWORD': 'root',
-        'HOST': '192.168.1.108',
+        'HOST': '10.1.20.21',
         'PORT': '3306',
     }
 }

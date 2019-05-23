@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.db import models
 from django.utils.timezone import now
+from django.contrib.auth.models import User
+
 
 
 class CommonInfo(models.Model):
@@ -10,6 +12,8 @@ class CommonInfo(models.Model):
     def save(self, *args, **kwargs):
         if not self.created_at:
             self.created_at = now()
+        if not self.created_by:
+            self.created_by = User.objects.get(username="pedro")
 
         super(CommonInfo, self).save(*args, **kwargs)
 

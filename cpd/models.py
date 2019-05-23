@@ -6,7 +6,7 @@ from django.db.models import CASCADE
 from core.models import CommonInfo
 
 
-class sensor(models.Model):
+class Sensor(models.Model):
     TIPO_CHOICES = (
         ("TEM", "Temperatura"),
         ("HUM", "Humedad"),
@@ -23,13 +23,13 @@ class sensor(models.Model):
         verbose_name = "Sensor"
         verbose_name_plural = "Sensores"
         ordering = ['-nombre']
-
+    
     def __str__(self):
         return self.nombre
 
-class incidencia(CommonInfo):
+class Incidencia(CommonInfo):
     id = models.AutoField('ID', primary_key=True)
-    id_sensor = models.ForeignKey(sensor, on_delete=models.CASCADE, related_name="incidencias")
+    sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, related_name="incidencias")
     valor_de_accion = models.IntegerField('Valor de acción')
     descripcion = models.TextField('Descripción', default='Ha saltado una alarma')
     estado_motor = models.BooleanField('Estado de los motores')
@@ -41,9 +41,9 @@ class incidencia(CommonInfo):
     def __str__(self):
         return self.id
 
-class lectura_sensores(CommonInfo):
-    num = models.IntegerField('Número de lectura', primary_key=True)
-    id_sensor = models.ForeignKey(sensor, on_delete=models.CASCADE, related_name="lectura_sensores")
+class Lectura_sensores(CommonInfo):
+    num = models.AutoField('Número de lectura', primary_key=True)
+    sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, related_name="lectura_sensores")
     valor = models.SmallIntegerField('Valor de la lectura', null=False, default=0)
     class Meta:
         verbose_name = "Lectura sensor"
