@@ -8,13 +8,19 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 
+def index_view(request):
+    context = {
+        'sample_var': "ejemplo"
+    }
+    return render(request, 'index2.html', context)
 
-def sensor_list_view(request):
-    return HttpResponse("Saludos")
 
+def incidencias_view(request):
+    context = {
 
-def sensor_detail_view(request):
-    return HttpResponse("Saludos")
+    }
+    return render(request, 'incidencias.html', context)
+
 
 @csrf_exempt
 def insert_database(request):

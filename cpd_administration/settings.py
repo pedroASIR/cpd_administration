@@ -25,7 +25,7 @@ SECRET_KEY = 'tp5+7vy$kr08tck!zxq)kev!f#d$9(8u_74j^n54gxv2!%w)#2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -64,7 +64,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'cpd.templates',
             ],
         },
     },
@@ -82,7 +81,7 @@ DATABASES = {
         'NAME': 'proyecto',
         'USER': 'pedro',
         'PASSWORD': 'root',
-        'HOST': '10.1.20.21',
+        'HOST': '192.168.1.108',
         'PORT': '3306',
     }
 }
@@ -125,3 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = ''
+STATICFILES_DIRS = (
+    'static',
+)
