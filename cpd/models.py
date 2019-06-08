@@ -39,16 +39,18 @@ class Incidencia(CommonInfo):
         ordering = ['-id']
 
     def __str__(self):
-        return self.id
+        cadena = str(self.id)+','+str(self.sensor)+','+str(self.valor_de_accion)+','+self.descripcion+','+str(self.estado_motor)+','+str(self.created_at)
+        return cadena
 
 class Lectura_sensores(CommonInfo):
     num = models.AutoField('Número de lectura', primary_key=True)
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, related_name="lectura_sensores")
-    valor = models.SmallIntegerField('Valor de la lectura', null=False, default=0)
+    valorTem = models.SmallIntegerField('Valor de temperatura', null=True, default=0)
+    valorHum = models.SmallIntegerField('Valor de humedad', null=True, default=0)
     class Meta:
         verbose_name = "Lectura sensor"
         verbose_name_plural = "Lectura sensores"
         ordering = ['-num']
     def __str__(self):
-        return self.num
-
+        valores = str(self.valorTem) + ', ' + str(self.valorHum)
+        return valores
