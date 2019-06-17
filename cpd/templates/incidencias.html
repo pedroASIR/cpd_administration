@@ -132,28 +132,17 @@
                     <th>MOTOR</th>
                     <th>FECHA</th>
                   </tr>
+                  {% for inci in incidencia %}
+
                   <tr>
-                    <td>{{ incidencia_id }}</td>
-                    <td>{{ incidencia_sensor }}</td>
-                    <td>{{ incidencia_valor }}</td>
-                    <td>{{ incidencia_desc }}</td>
-                    <td>{{ incidencia_motor }}</td>
-                    <td>{{ incidencia_date }}</td>
+                    <td>{{ inci.id }}</td>
+                    <td>{{ inci.sensor }}</td>
+                    <td>{{ inci.valor_de_accion }}</td>
+                    <td>{{ inci.descripcion }}</td>
+                    <td>{{ inci.estado_motor }}</td>
+                    <td>{{ inci.created_at|date:"H:i:s -- d/m/Y " }}</td>
                   </tr>
-                  <tr>
-                    <td>{{ incidencia_id }}</td>
-                    <td>{{ incidencia_sensor }}</td>
-                    <td>{{ incidencia_valor }}</td>
-                    <td>{{ incidencia_desc }}</td>
-                    <td>{{ incidencia_motor }}</td>
-                  </tr>
-                  <tr>
-                    <td>{{ incidencia_id }}</td>
-                    <td>{{ incidencia_sensor }}</td>
-                    <td>{{ incidencia_valor }}</td>
-                    <td>{{ incidencia_desc }}</td>
-                    <td>{{ incidencia_motor }}</td>
-                  </tr>
+                  {% endfor %}
                   </tbody>
                 </table>
                 <!-- /.table -->

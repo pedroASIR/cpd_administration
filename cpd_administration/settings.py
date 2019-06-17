@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'proyecto',
         'USER': 'pedro',
         'PASSWORD': 'root',
-        'HOST': '192.168.1.108',
+        'HOST': '192.168.1.60',
         'PORT': '3306',
     }
 }
@@ -111,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Madrid'
 
 DATETIME_FORMAT = '%H:%M:%S %d-%m-%Y'
 
